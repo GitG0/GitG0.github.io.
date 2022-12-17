@@ -40,6 +40,7 @@ myImage.onclick = () => {
 
 let myButton = document.querySelector("button");
 let myHeading = document.querySelector("h1");
+let myTitle = document.querySelector("title");
 
 function setUserName() {
   const myName = prompt("Please enter your name.");
@@ -48,7 +49,12 @@ function setUserName() {
   } else {
     localStorage.setItem("name", myName);
     myHeading.textContent = `Mozilla is cool, ${myName}`;
+    setTitle(myName);
   }
+}
+
+function setTitle(myName){
+  myTitle.textContent = `${myName}'s Website`
 }
 
 if (!localStorage.getItem("name")) {
